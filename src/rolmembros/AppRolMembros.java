@@ -1,5 +1,4 @@
 package rolmembros;
-
 /**
  *
  * @author andre
@@ -15,7 +14,18 @@ public class AppRolMembros {
 
         lista.editaMembro("Andressa Varela", "38912389108", "39/12/2003");
         lista.imprimeListaMembros();
-
+        
+        PilhaDatas pilha = new PilhaDatas(5);
+        
+        try {
+    pilha.adcdata(1);
+    pilha.adcdata(2);
+    pilha.adcdata(3);
+    pilha.adcdata(4);
+    System.out.println("Pilha após adicionar: " + pilha.toString());
+} catch (Exception e) {
+    System.out.println("Erro ao adicionar data: " + e.getMessage());
+}
         //Forma de adicionar infos por interface, a ignorar na APS
         /*
         System.out.println("----");
@@ -31,5 +41,5 @@ public class AppRolMembros {
         lista.imprimeListaMembros();
          */
     }
-
+        
 }
