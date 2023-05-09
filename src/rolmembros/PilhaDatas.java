@@ -75,6 +75,7 @@ public class PilhaDatas implements IDataMod {
      *
      * @return true se a pilha estiver vazia, false caso contrário.
      */
+
     @Override
     public boolean vazia() {
         return topo == -1;
@@ -86,7 +87,6 @@ public class PilhaDatas implements IDataMod {
      *
      * @return true se a pilha estiver cheia, false caso contrário.
      */
-    @Override
     public boolean cheia() {
         return topo == pilha.length - 1;
     }

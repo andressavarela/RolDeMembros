@@ -40,6 +40,7 @@ public class AppRolMembros {
             System.out.println("-- edição de membro não existente --");
             lista.editaMembro("Paulo Silveira", "1972873874", "21/11/2022");
         } catch (Exception e) {
+
             System.out.println("Erro: " + e.getMessage());
         }
 

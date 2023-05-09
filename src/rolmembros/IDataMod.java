@@ -29,9 +29,11 @@ public interface IDataMod {
      * @return a data no topo da pilha.
      * @throws Exception se a pilha estiver vazia.
      */
-    public String topo() throws Exception;
+
+    public int topo() throws Exception;
 
     /**
+     *
      * Verifica se a pilha está vazia.
      *
      * @return true se a pilha estiver vazia, false caso contrário.
