@@ -40,17 +40,23 @@ public class AppRolMembros {
             System.out.println("-- edição de membro não existente --");
             lista.editaMembro("Paulo Silveira", "1972873874", "21/11/2022");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+
+            System.out.println("Erro: " + e.getMessage());
         }
 
         PilhaDatas pilha = new PilhaDatas(5);
+        System.out.println("");
 
         try {
-            pilha.adcdata(1);
-            pilha.adcdata(2);
-            pilha.adcdata(3);
-            pilha.adcdata(4);
-            System.out.println("Pilha após adicionar: " + pilha.toString());
+            System.out.println("DATAS DE PUBLICAÇÃO DAS LISTAS: ");
+            pilha.adiciona("10/12/2017");
+            pilha.adiciona("20/03/2018");
+            pilha.adiciona("31/12/2018");
+            pilha.adiciona("04/04/2019");
+            pilha.imprime();
+            System.out.println("-- remoção da última data --");
+            pilha.remove();
+            pilha.imprime();
         } catch (Exception e) {
             System.out.println("Erro ao adicionar data: " + e.getMessage());
         }

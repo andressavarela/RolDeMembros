@@ -1,17 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package rolmembros;
 
 /**
  *
  * Classe que implementa uma pilha de datas.
+ *
+ * @author Igor Marques de Sousa
  */
 public class PilhaDatas implements IDataMod {
 
     private int topo;
-    private int[] pilha;
+    private String[] pilha;
 
     /**
      *
@@ -20,12 +18,18 @@ public class PilhaDatas implements IDataMod {
      * @param tamanho o tamanho máximo da pilha.
      */
     public PilhaDatas(int tamanho) {
+        this.pilha = new String[tamanho];
         this.topo = -1;
-        this.pilha = new int[tamanho];
     }
 
-    @Override
-    public void adcdata(int data) throws Exception {
+    /**
+     *
+     * Insere uma nova data no topo da pilha.
+     *
+     * @param data a data a ser inserida na pilha.
+     * @throws Exception se a pilha estiver cheia.
+     */
+    public void adiciona(String data) throws Exception {
         if (cheia()) {
             throw new Exception("Pilha cheia.");
         }
@@ -33,40 +37,63 @@ public class PilhaDatas implements IDataMod {
         pilha[topo] = data;
     }
 
+    /**
+     *
+     * Remove e retorna a data no topo da pilha.
+     *
+     * @return a data no topo da pilha.
+     * @throws Exception se a pilha estiver vazia.
+     */
     @Override
-    public int removeData() throws Exception {
+    public String remove() throws Exception {
         if (vazia()) {
             throw new Exception("Pilha vazia.");
         }
-        int dataRemovida = pilha[topo];
+        String dataRemovida = pilha[topo];
         topo--;
         return dataRemovida;
     }
 
+    /**
+     *
+     * Retorna a data no topo da pilha.
+     *
+     * @return a data no topo da pilha.
+     * @throws Exception se a pilha estiver vazia.
+     */
     @Override
-    public int topo() throws Exception {
+    public String topo() throws Exception {
         if (vazia()) {
             throw new Exception("Pilha vazia.");
         }
         return pilha[topo];
     }
 
+    /**
+     *
+     * Verifica se a pilha está vazia.
+     *
+     * @return true se a pilha estiver vazia, false caso contrário.
+     */
+
     @Override
     public boolean vazia() {
         return topo == -1;
     }
 
-    @Override
+    /**
+     *
+     * Verifica se a pilha está cheia.
+     *
+     * @return true se a pilha estiver cheia, false caso contrário.
+     */
     public boolean cheia() {
         return topo == pilha.length - 1;
     }
 
-    @Override
-    public String toString() {
-        String pilhaStr = "";
-        for (int i = topo; i >= 0; i--) {
-            pilhaStr += pilha[i] + " ";
+    public void imprime() {
+        for (int i = 0; i <= topo; i++) {
+            System.out.println(pilha[i] + " ");
         }
-        return pilhaStr.trim();
     }
 }

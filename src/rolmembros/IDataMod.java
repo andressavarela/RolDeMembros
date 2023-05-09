@@ -1,39 +1,35 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
 package rolmembros;
 
-/*
-Interface que define as operações para manipulação de datas em uma pilha.
-*/
+/**
+ * Interface que define as operações para manipulação de datas em uma pilha.
+ *
+ * @author Igor Marques de Sousa
+ */
 public interface IDataMod {
 
     /**
+     * Insere um novo elemento no topo da pilha.
      *
-     * Insere uma nova data no topo da pilha.
-     *
-     * @param data a data a ser inserida na pilha.
+     * @param data o elemento a ser inserido na pilha.
      * @throws Exception se a pilha estiver cheia.
      */
-    public void adcdata(int data) throws Exception;
+    public void adiciona(String data) throws Exception;
 
     /**
+     * Remove e retorna o elemento no topo da pilha.
      *
-     * Remove e retorna a data no topo da pilha.
+     * @return o elemento no topo da pilha.
+     * @throws Exception se a pilha estiver vazia.
+     */
+    public String remove() throws Exception;
+
+    /**
+     * Retorna o elemento no topo da pilha.
      *
      * @return a data no topo da pilha.
      * @throws Exception se a pilha estiver vazia.
      */
-    public int removeData() throws Exception;
 
-    /**
-     *
-     * Retorna a data no topo da pilha sem removê-la.
-     *
-     * @return a data no topo da pilha.
-     * @throws Exception se a pilha estiver vazia.
-     */
     public int topo() throws Exception;
 
     /**
@@ -45,7 +41,6 @@ public interface IDataMod {
     public boolean vazia();
 
     /**
-     *
      * Verifica se a pilha está cheia.
      *
      * @return true se a pilha estiver cheia, false caso contrário.
@@ -53,10 +48,8 @@ public interface IDataMod {
     public boolean cheia();
 
     /**
-     *
-     * Retorna uma representação da pilha em forma de String.
-     *
-     * @return a representação da pilha em forma de String.
+     * Imprime os elementos da pilha.
      */
-    public String toString();
+    public void imprime();
+
 }
